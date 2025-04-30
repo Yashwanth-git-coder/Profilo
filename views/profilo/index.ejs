@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilo</title>
+</head>
+<body>
+    <h1>All Profilos!</h1>
+
+    <% for(let profilo of allProfilos) { %>
+        <div>
+            <p>Name: <%= profilo.name %>
+            </p>
+            <p>About me: <%= profilo.title_description %>
+            </p>
+
+        </div>
+        <hr>
+        <% } %> <!-- Correct closing tag -->
+
+
+</body>
+</html>
