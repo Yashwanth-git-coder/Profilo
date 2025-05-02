@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container for all cards */
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+    /* Center cards horizontally */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Each card styling */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card h5 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 1024px) {
+    .card {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+}
