@@ -11,6 +11,7 @@
 <body>
 
     <h1>All Profilos!</h1>
+    <button><a class="nav-link" href="/profilos/personal-new">Add new Listing</a></button>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -27,7 +28,7 @@
                             <p class="card-text">
                                 <%= profilo.title_description %>
                             </p>
-                            <a href="#" class="btn btn-primary">See me!</a>
+                            <a href="/profilos/<%= profilo._id %>" class="btn btn-primary">See me!</a>
                         </div>
                     </div>
                 </div>

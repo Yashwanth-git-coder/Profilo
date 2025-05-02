@@ -25,15 +25,54 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("All working Good!")
 });
 
+// All Profiles ------------------------------------------------
+
 app.get("/profilos", async (req, res) => {
     const allProfilos = await Personal.find({});
     res.render("profilo/index", {allProfilos});
 });
+// -------------------------------------------------------------
+
+// Create new Profiles
+
+app.get("/profilos/personal-new", (req, res) => {
+    res.render("profilo/personalnew.ejs");
+});
+
+app.post("/profilos", async(req, res) => {
+    const data = req.body.personal;
+
+    const newpersonaldata = new Personal({
+    ...data,
+    pro_image: {
+        url: data.pro_image || "https://thumbs.dreamstime.com/b/...", // set default if empty
+        filename: "" // optional, or extract filename if needed
+    }
+  });
+
+  await newpersonaldata.save();
+  res.redirect("/profilos");
+});
+
+// -----------------------------------------------------------
+
+// Show Profiles ---------------------------------------------
+
+app.get("/profilos/:id", async (req, res) => {
+    let { id } = req.params;
+    const profilo = await Personal.findById(id);
+
+    console.log(profilo);
+
+    res.render("profilo/showprofile.ejs", {profilo});
+});
+
 
 
 app.listen("8080", () => {

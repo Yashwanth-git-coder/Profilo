@@ -1,0 +1,64 @@
+:root {
+    --light-hover: #fcf4ff;
+    --dark-hover: #2a004a;
+    --dark-theme: #11001F;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    color: black;
+}
+
+body.dark {
+    background-color: var(--dark-theme);
+}
+
+/* Custom replacements for Tailwind utility classes */
+.bg-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-opacity-50 {
+    opacity: 0.5;
+}
+
+.backdrop-blur-lg {
+    backdrop-filter: blur(1rem);
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme {
+    background-color: var(--dark-theme);
+}
+
+.dark-shadow {
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.dark-border {
+    border: 1px solid #ccc;
+}
+
+.dark-border-light {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-bg-transparent {
+    background-color: transparent;
+}
+
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.font-outfit {
+    font-family: 'Outfit', sans-serif;
+}
+
+.font-ovo {
+    font-family: 'Ovo', serif;
+}

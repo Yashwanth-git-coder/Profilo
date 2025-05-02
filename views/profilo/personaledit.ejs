@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div class="row">
         <div class="col-8 offset-2">
-            <h3>Create a New Listing</h3>
+            <h3>Edit Personals</h3>
             <form method="POST" action="/profilos" novalidate class="needs-validation">
 
                 <div class="mb-3">
@@ -20,26 +22,27 @@
                     <div class="valid-feedback">Name looks Good!</div>
                     <div class="invalid-feedback">Name not looks Good!</div>
                 </div>
-    
+
                 <div class="mb-3">
                     <label for="title" class="form-label">Title: </label>
                     <input name="personal[title]" placeholder="AI Enginner" class="form-control" required />
                     <div class="valid-feedback">Title looks Good!</div>
                     <div class="invalid-feedback">Title not looks Good!</div>
                 </div>
-    
+
                 <div class="mb-3">
                     <label for="description" class="form-label">Image please: </label>
-                    <input name="personal[pro_image]" placeholder="enter a URL / Link" type="text" class="form-control" />
+                    <input name="personal[pro_image]" placeholder="enter a URL / Link" type="text"
+                        class="form-control" />
                 </div>
-    
+
                 <div class="mb-3">
                     <label for="title_description" class="form-label">Title Description: </label>
-                    <textarea  name="personal[title_description]" type="number" class="form-control"> </textarea>
+                    <textarea name="personal[title_description]" type="number" class="form-control"> </textarea>
                     <div class="valid-feedback">Title Description looks Good!</div>
                     <div class="invalid-feedback">Title Description not looks Good!</div>
                 </div>
-    
+
                 <div class="row">
                     <div class="mb-3 col-4">
                         <label for="country" class="form-label">Country: </label>
@@ -47,41 +50,45 @@
                         <div class="valid-feedback">Country looks Good!</div>
                         <div class="invalid-feedback">Country not looks Good!</div>
                     </div>
-    
+
                     <div class="mb-3 col-8">
                         <label for="location" class="form-label">Location: </label>
-                        <input name="personal[location]" type="text" placeholder="Bengaluru" class="form-control" required>
+                        <input name="personal[location]" type="text" placeholder="Bengaluru" class="form-control"
+                            required>
                         <div class="valid-feedback">Location looks Good!</div>
                         <div class="invalid-feedback">Location not looks Good!</div>
                     </div>
 
                     <div class="mb-3 col-8">
                         <label for="phone" class="form-label">Phone Number: </label>
-                        <input name="personal[phone]" type="number" placeholder="Bengaluru" class="form-control" required>
+                        <input name="personal[phone]" type="number" placeholder="Bengaluru" class="form-control"
+                            required>
                         <div class="valid-feedback">Phone Number looks Good!</div>
                         <div class="invalid-feedback">Phone Number not looks Good!</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="linkedIn" class="form-label">LinkedIn: </label>
-                        <input name="personal[linkedIn]" placeholder="enter a URL / Link" type="text" class="form-control" />
+                        <input name="personal[linkedIn]" placeholder="enter a URL / Link" type="text"
+                            class="form-control" />
                     </div>
 
                     <div class="mb-3">
                         <label for="twitter" class="form-label">Twitter: </label>
-                        <input name="personal[twitter]" placeholder="enter a URL / Link" type="text" class="form-control" />
+                        <input name="personal[twitter]" placeholder="enter a URL / Link" type="text"
+                            class="form-control" />
                     </div>
 
-    
+
                 </div>
-    
-    
+
+
                 <br><br>
-    
+
                 <button class="btn btn-dark add-btn">ADD</button>
-    
+
                 <br><br>
-    
+
             </form>
         </div>
     </div>
@@ -92,4 +99,5 @@
 
     <script src="/js/script.js"></script>
 </body>
+
 </html>
