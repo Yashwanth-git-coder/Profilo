@@ -18,8 +18,14 @@ body.dark {
     background-color: rgb(255, 255, 255);
 }
 
+.navcolor {
+    color: #00083f !important;
+    font-weight: 700;
+    /* pure white */
+}
+
 .bg-opacity-50 {
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .backdrop-blur-lg {
@@ -62,3 +68,53 @@ body.dark {
 .font-ovo {
     font-family: 'Ovo', serif;
 }
+
+/* ---------------- Media Queries ---------------- */
+
+/* Mobile: up to 640px
+@media (max-width: 640px) {
+    .grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .font-outfit,
+    .font-ovo {
+        font-size: 14px !important;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Tablet: 641px to 1024px */
+/* @media (min-width: 641px) and (max-width: 1024px) {
+    .grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .font-outfit,
+    .font-ovo {
+        font-size: 16px !important;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    }
+} */
+
+/* Desktop: 1025px and up */
+/* @media (min-width: 1025px) {
+    .grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .font-outfit,
+    .font-ovo {
+        font-size: 18px !important;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    }
+} */

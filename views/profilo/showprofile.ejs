@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - GreatStack</title>
+    <title><%= profilo.name %></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="./tailwind.config.js"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,15 +26,15 @@
         <!-- <img src="/images/logo.png" alt="Logo" class="w-28 cursor-pointer mr-14 dark:hidden"> -->
 
         <!-- <img src="/images/logo_dark.png" alt="Logo" class="w-28 cursor-pointer mr-14 hidden dark:block"> -->
-         <a href="#" class="w-28 cursor-pointer mr-14 hidden dark:block" style="font-size: xx-large; margin-left: 60px; padding-right: 20%;">Yashwanth</a>
+         <a href="#" class="w-28 cursor-pointer mr-14 hidden dark:block" style="font-size: xx-large; margin-left: 50px; padding-right: 10%;"><%= profilo.name.split(" ")[0] %></a>
 
         <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-ovo
         dark-border dark-border-white/50 dark-bg-transparent ">
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">My Work</a></li>
-            <li><a href="#contact">Contact me</a></li>
+            <li><a href="/profilos" class="navcolor">Home</a></li>
+            <li><a href="#about" class="navcolor">About me</a></li>
+            <li><a href="#services" class="navcolor">Services</a></li>
+            <li><a href="#work" class="navcolor">My Work</a></li>
+            <li><a href="#contact" class="navcolor">Contact me</a></li>
         </ul>
 
         <div class="flex items-center gap-4">
@@ -104,19 +104,17 @@
 
         <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
             <div class="max-w-max mx-auto relative">
-                <img src="/images/user-image.png" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+                <img src="<%= profilo.pro_image.url %>" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
 
-                <div
+                <!-- <div
                     class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
-                    <img src="/images/circular-text.png" alt="" class="w-full animate-spin_slow">
-                    <img src="/images/dev-icon.png" alt=""
-                        class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                </div>
+                    <img src="<%= profilo.title %>" alt="" class="w-full animate-spin_slow">
+                     <img src="/images/dev-icon.png" alt=""
+                        class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> -->
+                <!-- </div>  -->
             </div>
             <div class="flex-1">
-                <p class="mb-10 max-w-2xl font-ovo">I am an experienced Frontend Developer with over a decade of
-                    professional expertise in the field. Throughout my career, I have had the privilege of collaborating
-                    with prestigious organizations, contributing to their success and growth.</p>
+                <p class="mb-10 max-w-2xl font-ovo"><%= profilo.title_description %></p>
 
                 <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
                     <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black
@@ -341,24 +339,25 @@
     <!-- ----------- footer ---------  -->
     <div class="mt-20">
         <div class="text-center">
-            <img src="/images/logo.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
-            <img src="/images/logo_dark.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
-
+            <!-- <img src="/images/logo.png" alt="" class="w-36 mx-auto mb-2 dark:hidden"> -->
+            <!-- <img src="/images/logo_dark.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block"> -->
+            <h1 class="w-36 mx-auto mb-2 hidden dark:block"><%= profilo.name %></h1>
 
             <div class="w-max flex items-center gap-2 mx-auto">
                 <img src="/images/mail_icon.png" alt="" class="w-6 dark:hidden">
                 <img src="/images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
 
-                greatstackdev@gmail.com
+                accde@gmail.com
             </div>
         </div>
         <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
-            <p>© 2024 Eliana Jade. All rights reserved.</p>
+            <p>© 2024 <%= profilo.name %>. All rights reserved.</p>
             <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
                 <li><a target="_blank" href="https://instagram.com/greatstackdev">GitHub</a></li>
                 <li><a target="_blank" href="https://instagram.com/greatstackdev">LinkedIn</a></li>
                 <li><a target="_blank" href="https://instagram.com/greatstackdev">Twitter</a></li>
             </ul>
+            <button>Edit</button>
         </div>
     </div>
 
