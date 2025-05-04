@@ -5,6 +5,9 @@ const Personal = require("./models/personal.js");
 const Education = require("./models/education.js");
 const Project = require("./models/projects.js");
 const Skills = require("./models/skills.js");
+const expressLayouts = require('express-ejs-layouts');
+const methodOverride = require("method-override");
+
 
 
 const app = express();
@@ -26,6 +29,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.json());
+app.use(expressLayouts);
+app.set("layout", "layouts/boilerplate"); // ✅ Set correct default layout
+app.use(methodOverride("_method"));
+
+
 
 app.get("/", (req, res) => {
     res.send("All working Good!")
@@ -35,8 +43,9 @@ app.get("/", (req, res) => {
 
 app.get("/profilos", async (req, res) => {
     const allProfilos = await Personal.find({});
-    res.render("profilo/index", {allProfilos});
+    res.render("profilo/index", { allProfilos });
 });
+
 // -------------------------------------------------------------
 
 // Create new Profiles
@@ -57,7 +66,7 @@ app.post("/profilos", async(req, res) => {
   });
 
   await newpersonaldata.save();
-  res.redirect("/profilos");
+  res.redirect("/profilos", { layout: false });
 });
 
 // -----------------------------------------------------------
@@ -70,7 +79,28 @@ app.get("/profilos/:id", async (req, res) => {
 
     console.log(profilo);
 
-    res.render("profilo/showprofile.ejs", {profilo});
+    res.render("profilo/showprofile.ejs", {profilo, layout: false});
+});
+
+// -----------------------------------------------------------------------------
+
+// Edit Route -------------------------------------------------------------------
+
+app.get("/profilos/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const profiloedit = await Personal.findById(id);
+  res.render("profilo/personaledit.ejs", { profiloedit });
+});
+
+// --------------------------------------------------------------------------------
+
+
+//Update Route
+app.put("/profilos/:id", async (req, res) => {
+  let { id } = req.params;
+  await Personal.findByIdAndUpdate(id, { ...req.body.personal });
+  console.log()
+  res.redirect(`/profilos/${id}`);
 });
 
 
